@@ -10,4 +10,4 @@ def play_songs():
     print(songs)
     os.startfile(os.path.join(music_dir,songs[n]))
 
-play_songs()
+    play_songs()
