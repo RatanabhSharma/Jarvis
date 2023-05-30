@@ -1,8 +1,6 @@
 import pyttsx3  # pip install pyttsx3
 import speech_recognition as sr  # pip install SpeechRecognition
 import datetime  # pip install DateTime
-
-
 import webbrowser as wb  # pip install pycopy-webbrowser
 
 
@@ -12,6 +10,7 @@ engine.setProperty('voice', voices[0].id)  # 0-2 range for different voices
 voicespeed = 140  # setting speed
 engine.setProperty('rate', voicespeed)
 chrome_path = '"C:/Program Files/Google/Chrome/Application/chrome.exe" %s'
+
 
 
 def speak(audio):
@@ -28,10 +27,13 @@ def takeCommand():
 
     try:
         print("Recognising...")
-        query = r.recognize_google(audio, language='en-us')
+        query = r.recognize_google(audio, language='en-in')
+
     except Exception as e:
-        print(e)
-        return "---"
+        #print(e)
+        
+        print('Say that again please...')
+        return 'None'
     return query
 
 
@@ -70,10 +72,8 @@ def wishme():
 # Open chrome/Website
 def open_chrome():
     # url u want to open
-    url = 'https://www.google.com/'
+    url = 'https://github.com/RatanabhSharma'
     # Windows
-    chromepath = 'C:\Program Files\Google\Chrome\Application/chrome.exe %s'
-
     wb.get(chrome_path).open(url)
 
-
+    
